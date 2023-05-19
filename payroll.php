@@ -86,7 +86,7 @@
 				
 			});
 			$('#new_payroll_btn').click(function(){
-				uni_modal("New Payroll","manage_payroll.php")
+				uni_modal("Nueva Planilla","manage_payroll.php")
 			})
 			$('.remove_payroll').click(function(){
 				_conf("Are you sure to delete this payroll?","remove_payroll",[$(this).attr('data-id')])
