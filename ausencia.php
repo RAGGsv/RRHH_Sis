@@ -124,11 +124,11 @@
 			})
 			$('.remove_attendance').click(function(){
 				var d = '"'+($(this).attr('data-id')).toString()+'"';
-				_conf("Are you sure to delete this employee's time log record?","remove_attendance",[d])
+				_conf("¿Estas seguro de borrar este registro del empleado?","remove_attendance",[d])
 			})
 			$('.rem_att').click(function(){
 				var $id=$(this).attr('data-id');
-				_conf("Are you sure to delete this time log?","rem_att",[$id])
+				_conf("¿Estas seguro de borrar este registro?","rem_att",[$id])
 			})
 		});
 		function remove_attendance(id){
@@ -142,7 +142,7 @@
 				error:err=>console.log(err),
 				success:function(resp){
 						if(resp == 1){
-							alert_toast("Selected employee's time log data successfully deleted","success");
+							alert_toast("El registro de empleado seleccionado fue borrado exitosamente","success");
 								setTimeout(function(){
 								location.reload();
 
@@ -161,7 +161,7 @@
 				error:err=>console.log(err),
 				success:function(resp){
 						if(resp == 1){
-							alert_toast("Selected employee's time log data successfully deleted","success");
+							alert_toast("El registro de empleado seleccionado fue borrado exitosamente","success");
 								setTimeout(function(){
 								location.reload();
 
