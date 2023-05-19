@@ -1,115 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Define que el documento esta bajo el estandar de HTML 5 -->
+<!doctype html>
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <title> Sistema de Planillas - UES -  RRHH - 2023 </title>    
+        <?php include('./header.php'); ?>
+        <?php include('./db_connect.php'); ?>
+        <?php 
+        session_start();
+        if(isset($_SESSION['login_id']))
+        header("location:index.php?page=home");
 
-  <title>Administrador | Sistema de Pago de Planillas a Empleados</title>
- 	
-
-<?php include('./header.php'); ?>
-<?php include('./db_connect.php'); ?>
-<?php 
-session_start();
-if(isset($_SESSION['login_id']))
-header("location:index.php?page=home");
-
-?>
-
-</head>
-<style>
-	body{
-		width: 100%;
-	    height: calc(100%);
-	    /*background: #007bff;*/
-	}
-	main#main{
-		width:100%;
-		height: calc(100%);
-		background:white;
-	}
-	#login-right{
-		position: absolute;
-		right:0;
-		width:40%;
-		height: calc(100%);
-		background:white;
-		display: flex;
-		align-items: center;
-	}
-	#login-left{
-		position: absolute;
-		left:0;
-		width:60%;
-		height: calc(100%);
-		background:#59b6ec61;
-		display: flex;
-		align-items: center;
-		background: url(assets/img/payroll-cover.jpg);
-	    background-repeat: no-repeat;
-	    background-size: cover;
-	}
-	#login-right .card{
-		margin: auto;
-		z-index: 1
-	}
-	.logo {
-    margin: auto;
-    font-size: 8rem;
-    background: white;
-    padding: .5em 0.7em;
-    border-radius: 50% 50%;
-    color: #000000b3;
-    z-index: 10;
-}
-div#login-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100%);
-    height: calc(100%);
-    background: #9fa3a7e0;
-}
-
-</style>
-
-<body>
+        ?>
 
 
-  <main id="main" class=" bg-dark">
-  		<div id="login-left">
-  			
-  		</div>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        
+        <!-- Link hacia el archivo de estilos css -->
+        <link rel="stylesheet" href="css/login.css">
+        
+        <style type="text/css">
+            
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        
+    </head>
+    
+    <body>
+    
+        <div id="contenedor">
+            
+            <div id="contenedorcentrado">
+                <div id="login">
+                    <form id="login-form">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Usuario" required>
+                        
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+                        
+                        <button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Acceder</button>
+                    </form>
+                    
+                </div>
+                <div id="derecho">
+                    <div class="titulo">
+                        Bienvenido
+                    </div>
+                    <hr>
+                    <div class="pie-form">
+                        <a >Sistema de Planillas</a>
+                        <a >Envasadora de agua "Los Cocos"</a>
+                        <hr>
+                        <a >Copyright © 2023 - UES - RRHH</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
 
-  		<div id="login-right">
-  			<div class="card col-md-8">
-  				<div class="card-body">
-  						
-  					<form id="login-form" >
-  						<div class="form-group">
-  							<label for="username" class="control-label">Usuario</label>
-  							<input type="text" id="username" name="username" class="form-control">
-  						</div>
-  						<div class="form-group">
-  							<label for="password" class="control-label">Contraseña</label>
-  							<input type="password" id="password" name="password" class="form-control">
-  						</div>
-  						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Acceder</button></center>
-  					</form>
-  				</div>
-  			</div>
-  		</div>
-   
-
-  </main>
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-
-</body>
-<script>
+    <script>
 	$('#login-form').submit(function(e){
 		e.preventDefault()
 		$('#login-form button[type="button"]').attr('disabled',true).html('Logging in...');
@@ -137,4 +99,6 @@ div#login-right::before {
 		})
 	})
 </script>	
+
+
 </html>
