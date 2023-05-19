@@ -120,7 +120,7 @@
 				
 			});
 			$('#new_attendance_btn').click(function(){
-				uni_modal("New Time Record/s","manage_attendance.php",'mid-large')
+				uni_modal("Registro Ausencia o Incapacidad","manage_ausencia.php",'mid-large')
 			})
 			$('.remove_attendance').click(function(){
 				var d = '"'+($(this).attr('data-id')).toString()+'"';

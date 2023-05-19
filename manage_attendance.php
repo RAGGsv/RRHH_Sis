@@ -7,7 +7,7 @@
 	<form action="" id="employee-attendance">
 		<div class="row form-group">
 			<div class="col-md-4">
-				<label for="" class="control-label">Employee</label>
+				<label for="" class="control-label">Empleado</label>
 				<select id="employee_id" class="borwser-default select2">
 					<option value=""></option>
 					<?php 
@@ -21,10 +21,10 @@
 			<div class="col-md-3">
 				<label for="" class="control-label">Type</label>
 				<select id="type" class="borwser-default custom-select">
-					<option value="1">Time-in AM</option>
-					<option value="2">Time-out AM</option>
-					<option value="3">Time-in PM</option>
-					<option value="4">Tim-out PM</option>
+					<option value="1">Entrada AM</option>
+					<option value="2">Salida AM</option>
+					<option value="3">Entrada PM</option>
+					<option value="4">Salida PM</option>
 				</select>
 			</div>
 			<div class="col-md-3">

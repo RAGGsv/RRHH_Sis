@@ -21,10 +21,14 @@
 			<div class="col-md-3">
 				<label for="" class="control-label">Type</label>
 				<select id="type" class="borwser-default custom-select">
-					<option value="1">Time-in AM</option>
-					<option value="2">Time-out AM</option>
-					<option value="3">Time-in PM</option>
-					<option value="4">Tim-out PM</option>
+					<option value="1">Inicio Ausencia</option>
+					<option value="2">Finalizacion Ausencia</option>
+					<option value="3">Inicio Incapacidad</option>
+					<option value="4">Finalizacion Incapacidad</option>
+					<!-- <option value="1">Entrada AM</option>
+					<option value="2">Salida AM</option> -->
+					
+
 				</select>
 			</div>
 			<div class="col-md-3">
