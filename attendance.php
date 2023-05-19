@@ -30,7 +30,7 @@
 							<tbody>
 								<?php
 									$att=$conn->query("SELECT a.*,e.employee_no, concat(e.lastname,', ',e.firstname,' ',e.middlename) as ename FROM attendance a inner join employee e on a.employee_id = e.id order by UNIX_TIMESTAMP(datetime_log) asc  ") or die(mysqli_error());
-									$lt_arr = array(1 => " Time-in AM",2=>"Time-out AM",3 => " Time-in PM",4=>"Time-out PM");
+									$lt_arr = array(1 => " Entrada AM",2=>"Salida AM",3 => " Entrada PM",4=>"Salida PM");
 									while($row=$att->fetch_array()){
 										$date = date("Y-m-d",strtotime($row['datetime_log']));
 										$attendance[$row['employee_id']."_".$date]['details'] = array("eid"=>$row['employee_id'],"name"=>$row['ename'],"eno"=>$row['employee_no'],"date"=>$date);
@@ -120,7 +120,7 @@
 				
 			});
 			$('#new_attendance_btn').click(function(){
-				uni_modal("New Time Record/s","manage_attendance.php",'mid-large')
+				uni_modal("Nuevo Registro","manage_attendance.php",'mid-large')
 			})
 			$('.remove_attendance').click(function(){
 				var d = '"'+($(this).attr('data-id')).toString()+'"';

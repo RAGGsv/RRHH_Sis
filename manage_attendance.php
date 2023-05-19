@@ -19,7 +19,7 @@
 				</select>
 			</div>
 			<div class="col-md-3">
-				<label for="" class="control-label">Type</label>
+				<label for="" class="control-label">Tipo</label>
 				<select id="type" class="borwser-default custom-select">
 					<option value="1">Entrada AM</option>
 					<option value="2">Salida AM</option>
@@ -28,12 +28,12 @@
 				</select>
 			</div>
 			<div class="col-md-3">
-				<label for="" class="control-label">Date</label>
+				<label for="" class="control-label">Fecha</label>
 				<input type="text" id="adate" class="form-control datetimepicker" autocomplete="off">
 			</div>
 			<div class="col-md-2">
 				<label for="" class="control-label">&nbsp</label>
-				<button class="btn btn-primary btn-block btn-sm" type="button" id="add_list"> Add to List</button>
+				<button class="btn btn-primary btn-block btn-sm" type="button" id="add_list"> Agregar</button>
 			</div>	
 		</div>
 		
@@ -43,13 +43,13 @@
 				<thead>
 					<tr>
 						<th class="text-center">
-							Employee
+							Empleado
 						</th>
 						<th class="text-center">
-							Type
+							Tipo
 						</th>
 						<th class="text-center">
-							Date
+							Fecha
 						</th>
 						<th class="text-center">
 							
@@ -87,7 +87,7 @@
 
 <script>
 	$('.select2').select2({
-		placeholder:"Select here",
+		placeholder:"Seleccione",
 		width:"100%"
 	})
 	$('.datetimepicker').datetimepicker({
@@ -126,7 +126,7 @@
 				error:err=>console.log(),
 				success:function(resp){
 						if(resp == 1){
-							alert_toast("Attendance data successfully saved","success");
+							alert_toast("Asistencia registrada exitosamente","success");
 							setTimeout(function(){
 								location.reload()
 							},1000)
