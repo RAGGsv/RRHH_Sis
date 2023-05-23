@@ -30,8 +30,9 @@
 									<th>Nombre</th>
 									<th>AFP</th>
 									<th>ISSS</th>
-									<th>Prestaciones</th>
-									<th>Deducciones</th>
+									<th>ISSS Patronal</th>
+									<th>Renta</th>
+									
 									<th>Pago Neto</th>
 									<th>Acciones</th>
 								</tr>
@@ -47,8 +48,9 @@
 									<td><?php echo ucwords($row['ename']) ?></td>
 									<td><?php echo $row['absent'] ?></td>
 									<td><?php echo $row['late'] ?></td>
-									<td><?php echo number_format($row['allowance_amount'],2) ?></td>
 									<td><?php echo number_format($row['deduction_amount'],2) ?></td>
+									<td><?php echo number_format($row['allowance_amount'],2) ?></td>
+									
 									<td><?php echo number_format($row['net'],2) ?></td>
 									<td>
 										<center>
