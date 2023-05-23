@@ -27,18 +27,18 @@
 				</select>
 			</div>
 			<div class="col-md-3" style="display: none" id="dfield">
-				<label for="" class="control-label">Effective Date</label>
+				<label for="" class="control-label">Fecha efectiva</label>
 				<input type="date" id="edate" class="form-control">
 			</div>
 		</div>
 		<div class="row form-group">
 			<div class="col-md-5">
-				<label for="" class="control-label">Amount</label>
+				<label for="" class="control-label">Monto</label>
 				<input type="number" id="amount" class="form-control text-right" step="any" >
 			</div>	
 			<div class="col-md-2 offset-md-2">
 				<label for="" class="control-label">&nbsp</label>
-				<button class="btn btn-primary btn-block btn-sm" type="button" id="add_list"> Add to List</button>
+				<button class="btn btn-primary btn-block btn-sm" type="button" id="add_list"> Agregar a la lista</button>
 			</div>	
 		</div>
 		<hr>
@@ -47,16 +47,16 @@
 				<thead>
 					<tr>
 						<th class="text-center">
-							deduction
+							Deduccion
 						</th>
 						<th class="text-center">
-							Type
+							Tipo
 						</th>
 						<th class="text-center">
-							Amount
+							Monto
 						</th>
 						<th class="text-center">
-							Date
+							Fecha
 						</th>
 						<th class="text-center">
 							

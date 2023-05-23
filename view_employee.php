@@ -31,7 +31,7 @@ $emp = $conn->query("SELECT e.*,d.name as dname,p.name as pname FROM employee e 
 						  <li class="list-group-item d-flex justify-content-between align-items-center alist" data-id="<?php echo $row['id'] ?>">
 						  	<span>
 						    <p><small><?php echo $row['aname'] ?> * </small></p>
-						    <p><small>Type: <?php echo $t_arr[$row['type']] ?></small></p>
+						    <p><small>Tipo: <?php echo $t_arr[$row['type']] ?></small></p>
 						    <?php if($row['type'] == 3): ?>
 						    <p><small>Effective: <?php echo date("M d,Y",strtotime($row['effective_date'])) ?></small></p>
 						    <?php endif; ?>
@@ -46,7 +46,7 @@ $emp = $conn->query("SELECT e.*,d.name as dname,p.name as pname FROM employee e 
 			<div class="col-md-6">
 				<div class="card">
 					<div class="card-header">
-						<span><b>Deductions</b></span>
+						<span><b>Deducciones</b></span>
 						<button class="btn btn-primary btn-sm float-right" style="padding: 3px 5px" type="button" id="new_deduction"><i class="fa fa-plus"></i></button>
 					</div>
 					<div class="card-body">
