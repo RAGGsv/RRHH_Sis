@@ -380,7 +380,8 @@ Class Action {
 			return 1;
 	}
 	function calculate_payroll(){
-		extract($_POST);
+		
+extract($_POST);
 		$am_in = "08:00";
 		$am_out = "12:00";
 		$pm_in = "13:00";
@@ -389,9 +390,9 @@ Class Action {
 		$pay = $this->db->query("SELECT * FROM payroll where id = ".$id)->fetch_array();
 		$employee = $this->db->query("SELECT * FROM employee");
 		if($pay['type'] == 1)
-		$dm = 22;
+		$dm = 30;
 		else
-		$dm = 11;
+		$dm = 15;
 		$calc_days = abs(strtotime($pay['date_to']." 23:59:59")) - strtotime($pay['date_from']." 00:00:00 -1 day") ; 
         $calc_days =floor($calc_days / (60*60*24)  );
 		$att=$this->db->query("SELECT * FROM attendance where date(datetime_log) between '".$pay['date_from']."' and '".$pay['date_from']."' order by UNIX_TIMESTAMP(datetime_log) asc  ") or die(mysqli_error());
@@ -423,8 +424,43 @@ Class Action {
 			$net=0;
 			$allow_amount=0;
 			$ded_amount=0;
+			
+			$AFPlaboral = $salary * 0.0725;
+			
+			if ($salary <= 999) {
+				$ISSSpatronal = $salary * 0.075;
+				$ISSSlaboral = $salary * 0.03;
+			} else 
+			if ($salary >= 1000) {
+				$ISSSpatronal = 75;
+				$ISSSlaboral = 30;
+			}
+			
+			
+			$SalarioAFP = $salary - $AFPlaboral;
+			$descuentototal = $ISSSlaboral + $AFPlaboral;
+			$descuentocalculorenta = $salary - $ISSSlaboral - $AFPlaboral;
+			if ($descuentocalculorenta <= 472.00) {
+				$renta = 0;
+				$salarioliquido =  $salary - ($descuentototal + $renta);
+			}
+			elseif ($descuentocalculorenta > 472.00 and $descuentocalculorenta <=895.24) {
+				$renta = ($descuentocalculorenta - 472) * 0.10 + 17.67;
+				$salarioliquido =  $salary - ($descuentototal + $renta);
+			}
+			elseif ($descuentocalculorenta > 895.24 and $descuentocalculorenta <= 2038.10) {  
+				$renta = ($descuentocalculorenta - 895.24) * 0.20 + 60.00;
+				$salarioliquido =  $salary - ($descuentototal + $renta);
+			}
+			elseif ($descuentocalculorenta >= 2038.11) {
+				$renta = ($descuentocalculorenta - 2038.10) * 0.30 + 288.57; 
+				$salarioliquido =  $salary - ($descuentototal + $renta);
+			}			
 
-
+			$descuentototal = $descuentototal + $renta;
+		
+			
+			
 			for($i = 0; $i < $calc_days;$i++){
 				$dd = date("Y-m-d",strtotime($pay['date_from']." +".$i." days"));
 				$count = 0;
@@ -465,7 +501,8 @@ Class Action {
 					$ded_amount +=$drow['amount'];
 				}
 			}
-			$absent = $dp - $present; 
+			$absent = floatval($AFPlaboral);
+			$late = floatval($ISSSlaboral);
 			$data = " payroll_id = '".$pay['id']."' ";
 			$data .= ", employee_id = '".$row['id']."' ";
 			$data .= ", absent = '$absent' ";
