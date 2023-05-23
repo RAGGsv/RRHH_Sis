@@ -53,7 +53,7 @@
 									<td>
 										<center>
 									
-										 <button class="btn btn-sm btn-outline-primary view_payroll" data-id="<?php echo $row['id']?>" type="button"><i class="fa fa-eye"></i> View</button>
+										 <button class="btn btn-sm btn-outline-primary view_payroll" data-id="<?php echo $row['id']?>" type="button"><i class="fa fa-eye"></i> Ver</button>
 									
 										</center>
 									</td>
@@ -98,7 +98,7 @@
 			
 			$('.view_payroll').click(function(){
 				var $id=$(this).attr('data-id');
-				uni_modal("Employee Payslip","view_payslip.php?id="+$id,"large")
+				uni_modal("Planilla del empleado","view_payslip.php?id="+$id,"large")
 				
 			});
 			

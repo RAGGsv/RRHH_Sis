@@ -136,7 +136,7 @@
 				// return false;
 			start_load()
 			$.ajax({
-				url:'ajax.php?action=delete_employee_attendance',
+				url:'ajax.php?action=delete_employee_ausencia',
 				method:"POST",
 				data:{id:id},
 				error:err=>console.log(err),
@@ -155,7 +155,7 @@
 				
 			start_load()
 			$.ajax({
-				url:'ajax.php?action=delete_employee_attendance_single',
+				url:'ajax.php?action=delete_employee_ausencia_single',
 				method:"POST",
 				data:{id:id},
 				error:err=>console.log(err),

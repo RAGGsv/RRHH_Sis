@@ -323,11 +323,29 @@ Class Action {
 		if($delete)
 			return 1;
 	}
+	function delete_employee_ausencia(){
+		extract($_POST);
+		$date = explode('_',$id);
+		$dt = date("Y-m-d",strtotime($date[1]));
+ 
+		$delete = $this->db->query("DELETE FROM ausencia where employee_id = '".$date[0]."' and date(datetime_log) ='$dt' ");
+		if($delete)
+			return 1;
+	}
+
 	function delete_employee_attendance_single(){
 		extract($_POST);
 		
  
 		$delete = $this->db->query("DELETE FROM attendance where id = $id ");
+		if($delete)
+			return 1;
+	}
+	function delete_employee_ausencia_single(){
+		extract($_POST);
+		
+ 
+		$delete = $this->db->query("DELETE FROM ausencia where id = $id ");
 		if($delete)
 			return 1;
 	}

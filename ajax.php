@@ -140,6 +140,11 @@ if($action == "delete_employee_attendance_single"){
 	if($save)
 		echo $save;
 }
+if($action == "delete_employee_ausencia_single"){
+	$save = $crud->delete_employee_ausencia_single();
+	if($save)
+		echo $save;
+}
 if($action == "save_payroll"){
 	$save = $crud->save_payroll();
 	if($save)
