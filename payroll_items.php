@@ -28,8 +28,8 @@
 								<tr>
 									<th>ID del Empleado</th>
 									<th>Nombre</th>
-									<th>Ausencias</th>
-									<th>Tardanza</th>
+									<th>AFP</th>
+									<th>ISSS</th>
 									<th>Prestaciones</th>
 									<th>Deducciones</th>
 									<th>Pago Neto</th>
