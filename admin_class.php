@@ -501,6 +501,11 @@ extract($_POST);
 					$ded_amount +=$drow['amount'];
 				}
 			}
+			$descuentototal = floatval($AFPlaboral)+ floatval($ISSSlaboral) + floatval($renta);
+			$allow_amount = $renta;
+			$ded_amount = $ISSSpatronal;
+			$net = $salary - floatval($descuentototal);
+	
 			$absent = floatval($AFPlaboral);
 			$late = floatval($ISSSlaboral);
 			$data = " payroll_id = '".$pay['id']."' ";
