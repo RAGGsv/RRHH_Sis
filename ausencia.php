@@ -6,8 +6,8 @@
 				<br />
 				<div class="card">
 					<div class="card-header">
-						<span><b>Asistencia</b></span>
-						<button class="btn btn-primary btn-sm btn-block col-md-3 float-right" type="button" id="new_attendance_btn"><span class="fa fa-plus"></span> Agregar Asistencia</button>
+						<span><b>Ausencia o Incapacidad</b></span>
+						<button class="btn btn-primary btn-sm btn-block col-md-3 float-right" type="button" id="new_attendance_btn"><span class="fa fa-plus"></span> Agregar ausencia o incapacidad</button>
 					</div>
 					<div class="card-body">
 						<table id="table" class="table table-bordered table-striped">

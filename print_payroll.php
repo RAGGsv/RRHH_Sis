@@ -19,20 +19,20 @@ tr,td,th{
 		$pt = array(1=>"Monhtly",2=>"Semi-Monthly");
 ?>
 <div>
-<h2 class="text-center">Payroll - <?php echo $pay['ref_no'] ?></h2>
+<h2 class="text-center">Planilla - <?php echo $pay['ref_no'] ?></h2>
 <hr>
 </div>
 <table>
     <thead>
         <tr>
-            <th class="text-center">Employee ID</th>
-            <th class="text-center">Employee Name</th>
-            <th class="text-center">Monthly Salary</th>
-            <th class="text-center">Absent</th>
-            <th class="text-center">Tardy/Undertime(mins)</th>
-            <th class="text-center">Total Allowance</th>
-            <th class="text-center">Total Deduction</th>
-            <th class="text-center">Net Pay</th>
+            <th class="text-center">ID del empleado</th>
+            <th class="text-center">Nombrre</th>
+            <th class="text-center">Salario Mensual</th>
+            <th class="text-center">Ausencia</th>
+            <th class="text-center">Tardanza (mins)</th>
+            <th class="text-center">Prestaciones</th>
+            <th class="text-center">Deducciones</th>
+            <th class="text-center">Neto a Pagar</th>
         </tr>
     </thead>
     <tbody>

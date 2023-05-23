@@ -103,12 +103,12 @@
 		$('[name="id"]').val('');
 		$('#manage-position').get(0).reset();
 		$('.select2').val('').select2({
-			placeholder:"Please Select Here",
+			placeholder:"Seleccione",
 			width:"100%"
 		})
 	}
 	$('.select2').select2({
-		placeholder:"Please Select Here",
+		placeholder:"Seleccione",
 		width:"100%"
 	})
 	$('#manage-position').submit(function(e){

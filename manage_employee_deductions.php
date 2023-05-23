@@ -7,7 +7,7 @@
 		<input type="hidden" name="employee_id" value="<?php echo $_GET['id'] ?>">
 		<div class="row form-group">
 			<div class="col-md-5">
-				<label for="" class="control-label">Deduction</label>
+				<label for="" class="control-label">Deducciones</label>
 				<select id="deduction_id" class="borwser-default select2">
 					<option value=""></option>
 					<?php 
@@ -19,11 +19,11 @@
 				</select>
 			</div>
 			<div class="col-md-3">
-				<label for="" class="control-label">Type</label>
+				<label for="" class="control-label">Tipo</label>
 				<select id="type" class="borwser-default custom-select">
-					<option value="1">Monthly</option>
-					<option value="2">Semi-Monthly</option>
-					<option value="3">Once</option>
+					<option value="1">Mensual</option>
+					<option value="2">Quincenal</option>
+					<option value="3">Unica vez</option>
 				</select>
 			</div>
 			<div class="col-md-3" style="display: none" id="dfield">

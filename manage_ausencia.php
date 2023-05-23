@@ -7,7 +7,7 @@
 	<form action="" id="employee-attendance">
 		<div class="row form-group">
 			<div class="col-md-4">
-				<label for="" class="control-label">Employee</label>
+				<label for="" class="control-label">Empleado</label>
 				<select id="employee_id" class="borwser-default select2">
 					<option value=""></option>
 					<?php 
@@ -19,7 +19,7 @@
 				</select>
 			</div>
 			<div class="col-md-3">
-				<label for="" class="control-label">Type</label>
+				<label for="" class="control-label">Tipo</label>
 				<select id="type" class="borwser-default custom-select">
 					<option value="1">Inicio Ausencia</option>
 					<option value="2">Finalizacion Ausencia</option>
@@ -32,12 +32,12 @@
 				</select>
 			</div>
 			<div class="col-md-3">
-				<label for="" class="control-label">Date</label>
+				<label for="" class="control-label">Fecha</label>
 				<input type="text" id="adate" class="form-control datetimepicker" autocomplete="off">
 			</div>
 			<div class="col-md-2">
 				<label for="" class="control-label">&nbsp</label>
-				<button class="btn btn-primary btn-block btn-sm" type="button" id="add_list"> Add to List</button>
+				<button class="btn btn-primary btn-block btn-sm" type="button" id="add_list"> Agregar</button>
 			</div>	
 		</div>
 		
@@ -47,13 +47,13 @@
 				<thead>
 					<tr>
 						<th class="text-center">
-							Employee
+							Empleado
 						</th>
 						<th class="text-center">
-							Type
+							Tipo
 						</th>
 						<th class="text-center">
-							Date
+							Fecha
 						</th>
 						<th class="text-center">
 							
@@ -91,7 +91,7 @@
 
 <script>
 	$('.select2').select2({
-		placeholder:"Select here",
+		placeholder:"Seleccione",
 		width:"100%"
 	})
 	$('.datetimepicker').datetimepicker({
@@ -112,7 +112,7 @@
 		tr.find('.adate').html(adate)
 		$('#attendance-list tbody').append(tr)
 		$('#employee_id').val('').select2({
-			placeholder:"Select here",
+			placeholder:"Seleccione",
 			width:"100%"
 		})
 		$('#type').val('')

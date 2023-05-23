@@ -1,7 +1,7 @@
 <?php include('db_connect.php') ?>
 <?php
 		$pay = $conn->query("SELECT * FROM payroll where id = ".$_GET['id'])->fetch_array();
-		$pt = array(1=>"Monhtly",2=>"Semi-Monthly");
+		$pt = array(1=>"Mensual",2=>"Quincenal");
 ?>
 		<div class="container-fluid " >
 			<div class="col-lg-12">
@@ -10,30 +10,30 @@
 				<br />
 				<div class="card">
 					<div class="card-header">
-						<span><b>Payroll : <?php echo $pay['ref_no'] ?></b></span>
+						<span><b>Planilla : <?php echo $pay['ref_no'] ?></b></span>
 						
-						<button class="btn btn-primary btn-sm btn-block col-md-2 float-right" type="button" id="new_payroll_btn"><span class="fa fa-plus"></span> Re-Caclulate Payroll</button>
+						<button class="btn btn-primary btn-sm btn-block col-md-2 float-right" type="button" id="new_payroll_btn"><span class="fa fa-plus"></span> Recalcular Planilla</button>
 					</div>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-12">
-							<p>Payroll Range: <b><?php echo date("M d, Y",strtotime($pay['date_from'])). " - ".date("M d, Y",strtotime($pay['date_to'])) ?></b></p>
-							<p>Payroll Type: <b><?php echo $pt[$pay['type']] ?></b></p>
-							<button class="btn btn-success btn-sm btn-block col-md-2 float-right" type="button" id="print_btn"><span class="fa fa-print"></span> Print</button>
+							<p>Planilla desde: <b><?php echo date("M d, Y",strtotime($pay['date_from'])). " - ".date("M d, Y",strtotime($pay['date_to'])) ?></b></p>
+							<p>Tipo de pago: <b><?php echo $pt[$pay['type']] ?></b></p>
+							<button class="btn btn-success btn-sm btn-block col-md-2 float-right" type="button" id="print_btn"><span class="fa fa-print"></span> Imprimir</button>
 							</div>
 						</div>
 						<hr>
 						<table id="table" class="table table-bordered table-striped">
 							<thead>
 								<tr>
-									<th>Employee ID</th>
-									<th>Name</th>
-									<th>Absent</th>
-									<th>Late</th>
-									<th>Total Allowance</th>
-									<th>Total Deduction</th>
-									<th>Net</th>
-									<th>Action</th>
+									<th>ID del Empleado</th>
+									<th>Nombre</th>
+									<th>Ausencias</th>
+									<th>Tardanza</th>
+									<th>Prestaciones</th>
+									<th>Deducciones</th>
+									<th>Pago Neto</th>
+									<th>Acciones</th>
 								</tr>
 							</thead>
 							<tbody>
