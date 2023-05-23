@@ -124,13 +124,13 @@
 				e.preventDefault()
 				start_load();
 			$.ajax({
-				url:'ajax.php?action=save_employee_attendance',
+				url:'ajax.php?action=save_employee_ausencia',
 				method:"POST",
 				data:$(this).serialize(),
 				error:err=>console.log(),
 				success:function(resp){
 						if(resp == 1){
-							alert_toast("Attendance data successfully saved","success");
+							alert_toast("Dato guardado correctamente","success");
 							setTimeout(function(){
 								location.reload()
 							},1000)

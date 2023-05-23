@@ -299,6 +299,21 @@ Class Action {
 		if(isset($save))
 			return 1;
 	}
+	function save_employee_ausencia(){
+		extract($_POST);
+		
+		foreach($employee_id as $k =>$v){
+			$datetime_log[$k] =date("Y-m-d H:i",strtotime($datetime_log[$k]));
+			$data =" employee_id='$employee_id[$k]' ";
+			$data .=", log_type = '$log_type[$k]' ";
+			$data .=", datetime_log = '$datetime_log[$k]' ";
+			$save[] = $this->db->query("INSERT INTO ausencia set ".$data);
+		}
+
+		if(isset($save))
+			return 1;
+	}
+
 	function delete_employee_attendance(){
 		extract($_POST);
 		$date = explode('_',$id);

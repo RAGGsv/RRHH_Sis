@@ -124,14 +124,14 @@
 		    type: 'POST',
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully added",'success')
+					alert_toast("Actualizado con éxito",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)
 
 				}
 				else if(resp==2){
-					alert_toast("Data successfully updated",'success')
+					alert_toast("Actualizado con éxito",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)

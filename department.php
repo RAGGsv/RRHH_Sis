@@ -107,14 +107,14 @@
 		    type: 'POST',
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully added",'success')
+					alert_toast("Agregado correctamente",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)
 
 				}
 				else if(resp==2){
-					alert_toast("Data successfully updated",'success')
+					alert_toast("Actualizado correctamente",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)
@@ -152,7 +152,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Borrado con éxito",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)

@@ -29,7 +29,7 @@
 							</thead>
 							<tbody>
 								<?php
-									$att=$conn->query("SELECT a.*,e.employee_no, concat(e.lastname,', ',e.firstname,' ',e.middlename) as ename FROM attendance a inner join employee e on a.employee_id = e.id order by UNIX_TIMESTAMP(datetime_log) asc  ") or die(mysqli_error());
+									$att=$conn->query("SELECT a.*,e.employee_no, concat(e.lastname,', ',e.firstname,' ',e.middlename) as ename FROM ausencia a inner join employee e on a.employee_id = e.id order by UNIX_TIMESTAMP(datetime_log) asc  ") or die(mysqli_error());
 									$lt_arr = array(1 => " Inicio Ausencia",2=>"Fin Ausencia",3 => " Inicio Incapacidad",4=>"Fin Incapacidad");
 									while($row=$att->fetch_array()){
 										$date = date("Y-m-d",strtotime($row['datetime_log']));

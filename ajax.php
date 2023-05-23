@@ -115,9 +115,18 @@ if($action == "delete_employee_deduction"){
 	if($save)
 		echo $save;
 }
-
+if($action == "save_employee_ausencia"){
+	$save = $crud->save_employee_ausencia();
+	if($save)
+		echo $save;
+}
 if($action == "save_employee_attendance"){
 	$save = $crud->save_employee_attendance();
+	if($save)
+		echo $save;
+}
+if($action == "delete_employee_ausencia"){
+	$save = $crud->delete_employee_ausencia();
 	if($save)
 		echo $save;
 }
