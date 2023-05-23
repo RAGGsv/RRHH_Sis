@@ -7,16 +7,16 @@
 				<div class="card">
 					<div class="card-header">
 						<span><b>Lista de Empleados</b></span>
-						<button class="btn btn-primary btn-sm btn-block col-md-3 float-right" type="button" id="new_emp_btn"><span class="fa fa-plus"></span> Agregar Empleado</button>
+						<button class="btn btn-primary btn-sm btn-block col-md-3 float-right" type="button" id="new_emp_btn"><span class="fa fa-plus"></span> Indemnizar</button>
 					</div>
 					<div class="card-body">
 						<table id="table" class="table table-bordered table-striped">
 							<thead>
 								<tr>
 									<th>Cod Empleado</th>
-									<th>Nombre</th>
-									<th>Segundo Nombre</th>
-									<th>Apellido</th>
+									<th>Nombres</th>
+									
+									<th>Apellidos</th><th>DUI</th>
 									<th>Departmento</th>
 									<th>Posicion</th>
 									<th>Accion</th>
@@ -40,8 +40,8 @@
 								<tr>
 									<td><?php echo $row['employee_no']?></td>
 									<td><?php echo $row['firstname']?></td>
-									<td><?php echo $row['middlename']?></td>
-									<td><?php echo $row['lastname']?></td>
+									
+									<td><?php echo $row['lastname']?></td><td><?php echo $row['middlename']?></td>
 									<td><?php echo $d_arr[$row['department_id']]?></td>
 									<td><?php echo $p_arr[$row['position_id']]?></td>
 									<td>

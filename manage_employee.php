@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validación de DUI</title>
+	<script>
+		window.onload = function() {
+			// Obtener el elemento de entrada del DUI
+			var duiInput = document.getElementsByName('middlename')[0];
+
+			// Agregar un evento de escucha para verificar la entrada cada vez que cambie
+			duiInput.addEventListener('input', function() {
+				// Obtener el valor actual del campo de entrada
+				var duiValue = duiInput.value;
+
+				// Expresión regular para validar el formato del DUI
+				var duiRegex = /^\d{8}-\d$/;
+
+				// Verificar si el valor coincide con el formato esperado
+				if (!duiRegex.test(duiValue)) {
+					// El valor no cumple con el formato, mostrar un mensaje de error o tomar la acción correspondiente
+					alert('El formato del DUI es incorrecto');
+				}
+			});
+		};
+	</script>
+</head>
 <?php 
 include 'db_connect.php'; 
 if(isset($_GET['id'])){
@@ -11,20 +37,21 @@ if(isset($_GET['id'])){
 <div class="container-fluid">
 	<form id='employee_frm'>
 		<div class="form-group">
-			<label>Firstname</label>
+			<label>Nombres</label>
 			<input type="hidden" name="id" value="<?php echo isset($id) ? $id : "" ?>" />
 			<input type="text" name="firstname" required="required" class="form-control" value="<?php echo isset($firstname) ? $firstname : "" ?>" />
 		</div>
+		
 		<div class="form-group">
-			<label>Middlename</label>
-			<input type="text" name ="middlename" placeholder="(optional)" class="form-control" value="<?php echo isset($middlename) ? $middlename : "" ?>" />
-		</div>
-		<div class="form-group">
-			<label>Lastname:</label>
+			<label>Apellidos:</label>
 			<input type="text" name="lastname" required="required" class="form-control" value="<?php echo isset($lastname) ? $lastname : "" ?>" />
 		</div>
 		<div class="form-group">
-			<label>Department</label>
+			<label>DUI</label>
+			<input type="text" name ="middlename" placeholder="00000000-0" class="form-control" value="<?php echo isset($middlename) ? $middlename : "" ?>" />
+		</div>
+		<div class="form-group">
+			<label>Departamento</label>
 			<select class="custom-select browser-default select2" name="department_id">
 				<option value=""></option>
 			<?php
@@ -36,7 +63,7 @@ if(isset($_GET['id'])){
 			</select>
 		</div>
 		<div class="form-group">
-			<label>Position</label>
+			<label>Cargo</label>
 			<select class="custom-select browser-default select2" name="position_id">
 				<option value=""></option>
 			<?php
@@ -48,7 +75,7 @@ if(isset($_GET['id'])){
 			</select>
 		</div>
 		<div class="form-group">
-			<label>Monthly Salary</label>
+			<label>Salario Mensual</label>
 			<input type="number" name="salary" required="required" class="form-control text-right" step="any" value="<?php echo isset($salary) ? $salary : "" ?>" />
 		</div>
 	</form>
@@ -66,7 +93,7 @@ if(isset($_GET['id'])){
 	})
 	$(document).ready(function(){
 		$('.select2').select2({
-			placeholder:"Please Select Here",
+			placeholder:"Seleccione aqui",
 			width:"100%"
 		})
 		$('#employee_frm').submit(function(e){
@@ -79,7 +106,7 @@ if(isset($_GET['id'])){
 				error:err=>console.log(),
 				success:function(resp){
 						if(resp == 1){
-							alert_toast("Employee's data successfully saved","success");
+							alert_toast("Guardado con éxito","success");
 								setTimeout(function(){
 								location.reload();
 

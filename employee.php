@@ -14,9 +14,10 @@
 							<thead>
 								<tr>
 									<th>Cod Empleado</th>
-									<th>Nombre</th>
-									<th>Segundo Nombre</th>
-									<th>Apellido</th>
+									<th>Nombres</th>
+									
+									<th>Apellidos</th>
+									<th>DUI</th>
 									<th>Departmento</th>
 									<th>Posicion</th>
 									<th>Accion</th>
@@ -40,8 +41,9 @@
 								<tr>
 									<td><?php echo $row['employee_no']?></td>
 									<td><?php echo $row['firstname']?></td>
-									<td><?php echo $row['middlename']?></td>
+									
 									<td><?php echo $row['lastname']?></td>
+									<td><?php echo $row['middlename']?></td>
 									<td><?php echo $d_arr[$row['department_id']]?></td>
 									<td><?php echo $p_arr[$row['position_id']]?></td>
 									<td>
@@ -81,19 +83,19 @@
 			
 			$('.edit_employee').click(function(){
 				var $id=$(this).attr('data-id');
-				uni_modal("Edit Employee","manage_employee.php?id="+$id)
+				uni_modal("Editar empleado","manage_employee.php?id="+$id)
 				
 			});
 			$('.view_employee').click(function(){
 				var $id=$(this).attr('data-id');
-				uni_modal("Employee Details","view_employee.php?id="+$id,"mid-large")
+				uni_modal("Detalles de empleado","view_employee.php?id="+$id,"mid-large")
 				
 			});
 			$('#new_emp_btn').click(function(){
-				uni_modal("New Employee","manage_employee.php")
+				uni_modal("Nuevo empleado","manage_employee.php")
 			})
 			$('.remove_employee').click(function(){
-				_conf("Are you sure to delete this employee?","remove_employee",[$(this).attr('data-id')])
+				_conf("¿Estas seguro de borrar este empleado?","remove_employee",[$(this).attr('data-id')])
 			})
 		});
 		function remove_employee(id){
@@ -105,7 +107,7 @@
 				error:err=>console.log(err),
 				success:function(resp){
 						if(resp == 1){
-							alert_toast("Employee's data successfully deleted","success");
+							alert_toast("Datos del empleado borrado con éxito","success");
 								setTimeout(function(){
 								location.reload();
 
