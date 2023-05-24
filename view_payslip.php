@@ -14,18 +14,26 @@
 		<h5><b><small>ID del empleado :</small><?php echo $employee_no ?></b></h5>
 		<h4><b><small>Nombre: </small><?php echo ucwords($ename) ?></b></h4>
 		<hr class="divider">
+		<button class="btn btn-success btn-sm btn-block col-md-2 float-right" type="button" id="print_payslip_btn">
+		<span class="fa fa-print"></span> Imprimir
+</button>
+
 		<div class="row">
+			
 			<div class="col-md-6">
 				<p><b>Planilla Ref : <?php echo $pay['ref_no'] ?></b></p>
 				<p><b>Fechas : <?php echo date("M d, Y",strtotime($pay['date_from'])). " - ".date("M d, Y",strtotime($pay['date_to'])) ?></b></p>
 				<p><b>Pago de planilla : <?php echo $pt[$pay['type']] ?></b></p>
 			</div>
 			<div class="col-md-6">
-				<p><b>Ausencias o incapacidad : <?php echo $absent ?></b></p>
-				<p><b>Tarddanza (mins) : <?php echo $late ?></b></p>
-				<p><b>Total beneficios : <?php echo number_format($allowance_amount,2) ?></b></p>
-				<p><b>Total deducciones : <?php echo number_format($deduction_amount,2) ?></b></p>
-				<p><b>Pago Neto : <?php echo number_format($net,2) ?></b></p>
+				<p><b>Salario : $<?php echo number_format($salary,2) ?></b></p>
+
+
+				<p><b>AFP : $<?php echo $absent ?></b></p>
+				<p><b>ISSS : $<?php echo $late ?></b></p>
+				<p><b>Renta : $<?php echo number_format($allowance_amount,2) ?></b></p>
+				<!--<p><b>Total deducciones $: <?php echo number_format($deduction_amount,2) ?></b></p>-->
+				<p><b>Pago Neto : $<?php echo number_format($net,2) ?></b></p>
 			</div>
 		</div>
 	
@@ -110,6 +118,3 @@
 		width: 100%
 	}
 </style>
-<script>
-
-</script>
