@@ -26,6 +26,7 @@
 				<p><b>Pago de planilla : <?php echo $pt[$pay['type']] ?></b></p>
 			</div>
 			<div class="col-md-6">
+				
 				<p><b>Salario : $<?php echo number_format($salary,2) ?></b></p>
 
 
@@ -119,12 +120,17 @@
 	}
 </style>
 <script type="text/javascript">
-	$(document).ready(function(){
-		$('#print_payslip_btn').click(function(){
-			var employeeId = <?php echo $_GET['employee_id']; ?>; // Obtén el ID del empleado de alguna manera (puedes utilizar PHP o JavaScript)
 
-			// Redirecciona a la vista print_payslip.php con el ID del empleado como parámetro
-			window.location.href = 'print_payslip.php?employee_id=' + employeeId;
-		});
-	});
+	$('#print_payslip_btn').click(function(){
+				var nw = window.open("print_payslip.php?id=<?php echo $id?>","_blank","height=500,width=800")
+				setTimeout(function(){
+					nw.print()
+					setTimeout(function(){
+						nw.close()
+						},500)
+				},1000)
+			})
+
+			
 </script>
+
