@@ -16,7 +16,7 @@ tr,td,th{
 <?php include 'db_connect.php' ?>
 
 <?php
-	$payroll=$conn->query("SELECT p.*,concat(e.lastname,', ',e.firstname,' ',e.middlename) as ename,e.employee_no FROM payroll_items p inner join employee e on e.id = p.employee_id  where p.employee_id=".$_GET['id']);
+	$payroll=$conn->query("SELECT p.*,concat(e.lastname,', ',e.firstname,' ',e.middlename) as ename,e.employee_no FROM payroll_items p inner join employee e on e.id = p.employee_id  where p.id=".$_GET['id']);
 	foreach ($payroll->fetch_array() as $key => $value) {
 		$$key = $value;
 	}
