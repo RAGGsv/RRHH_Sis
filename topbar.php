@@ -9,7 +9,7 @@
   		
   		</div>
       <div class="col-md-4 float-left text-white">
-        <large><b>Sistema de Planilla</b></large>
+        <large><b>Envasadora de agua "Los Cocos"</b></large>
       </div>
 	  	<div class="col-md-2 float-right text-white">
 	  		<a href="ajax.php?action=logout" class="text-white"><?php echo $_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a>
