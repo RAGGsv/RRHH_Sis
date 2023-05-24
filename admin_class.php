@@ -505,7 +505,7 @@ extract($_POST);
 			$allow_amount = $renta;
 			$ded_amount = $ISSSpatronal;
 			$net = $salary - floatval($descuentototal);
-	
+
 			$absent = floatval($AFPlaboral);
 			$late = floatval($ISSSlaboral);
 			$data = " payroll_id = '".$pay['id']."' ";
@@ -516,6 +516,7 @@ extract($_POST);
 			$data .= ", salary = '$salary' ";
 			$data .= ", allowance_amount = '$allow_amount' ";
 			$data .= ", deduction_amount = '$ded_amount' ";
+			
 			$data .= ", allowances = '".json_encode($all_arr)."' ";
 			$data .= ", deductions = '".json_encode($ded_arr)."' ";
 			$data .= ", net = '$net' ";
