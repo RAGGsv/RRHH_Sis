@@ -26,12 +26,12 @@ tr,td,th{
     <thead>
         <tr>
             <th class="text-center">ID del empleado</th>
-            <th class="text-center">Nombrre</th>
+            <th class="text-center">Nombre</th>
             <th class="text-center">Salario Mensual</th>
-            <th class="text-center">Ausencia</th>
-            <th class="text-center">Tardanza (mins)</th>
-            <th class="text-center">Prestaciones</th>
-            <th class="text-center">Deducciones</th>
+            <th class="text-center">AFP</th>
+            <th class="text-center">ISSS</th>
+            <th class="text-center">Renta</th>
+            <th class="text-center">ISSS Patronal</th>
             <th class="text-center">Neto a Pagar</th>
         </tr>
     </thead>
