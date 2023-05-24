@@ -118,3 +118,13 @@
 		width: 100%
 	}
 </style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#print_payslip_btn').click(function(){
+			var employeeId = <?php echo $_GET['employee_id']; ?>; // Obtén el ID del empleado de alguna manera (puedes utilizar PHP o JavaScript)
+
+			// Redirecciona a la vista print_payslip.php con el ID del empleado como parámetro
+			window.location.href = 'print_payslip.php?employee_id=' + employeeId;
+		});
+	});
+</script>
